@@ -92,6 +92,7 @@ export default {
 }
 
 @media screen and (max-width: 1060px) {
+
      
      .left-aligned-caption-container, .right-aligned-caption-container{
          position: relative;
@@ -101,7 +102,6 @@ export default {
          box-sizing: border-box;
          padding-top: 40px;
          transform: translateY(-30px);
-         z-index: -1000;
      }
 
      .left-aligned-image-container, .right-aligned-image-container {
@@ -109,6 +109,7 @@ export default {
          position: relative;
          height: auto;
          min-width: auto;
+         z-index: 1;
      }
 
      .right-aligned-image-container{
