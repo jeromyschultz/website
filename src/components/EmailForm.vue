@@ -76,7 +76,7 @@ export default {
     width: 70%;
     margin: 20px auto auto auto;
     display: block;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
 }
 
 .email-form {
@@ -85,6 +85,7 @@ export default {
 }
 
 .email-form > input {
+    padding-left: 5px;
     margin-top: 5px;
     height: 25px;
     border-radius: 5px;
@@ -99,6 +100,7 @@ export default {
 }
 
 .email-form > textarea {
+    padding: 5px;
     color: white;
     width: 100%;
     background-color: #212F3C;
@@ -106,8 +108,13 @@ export default {
     outline: none;
     resize: vertical;
     font-family: inherit;
-    /* padding-left: 10px; */
-    /* padding-top: 10px; */
+    border-radius: 5px;
+}
+
+.email-form > textarea, .email-form > input {
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;
 }
 
 .send-button {
@@ -115,6 +122,7 @@ export default {
     height: 30px;
     font-family: inherit;
     cursor: pointer;
+    width: 100%;
 }
 
 .send-button:hover {
