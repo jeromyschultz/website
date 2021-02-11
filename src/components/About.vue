@@ -152,7 +152,7 @@ export default {
         border-radius: 10px;
         display: flex;
         background-color: #17202A;
-        font-size: 1.7vw;
+        font-size: 10px;
         padding-left: 10px;
         padding-bottom: 10px;
     }

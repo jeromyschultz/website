@@ -123,4 +123,18 @@ export default {
      } 
 }
 
+@media screen and (max-width: 1060px) {
+    .project-name {
+        font-size: 15px;
+    }
+
+    .project-description {
+        font-size: 10px;
+    }
+
+    .repo-link-container {
+        font-size: 10px;
+    }
+}
+
 </style>
