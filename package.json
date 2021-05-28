@@ -15,7 +15,9 @@
     "@fortawesome/vue-fontawesome": "^2.0.0",
     "core-js": "^3.6.5",
     "emailjs-com": "^2.6.4",
+    "gsap": "^3.6.0",
     "jquery": "^3.5.1",
+    "locomotive-scroll": "^4.1.0",
     "require": "^2.4.20",
     "vue": "^2.6.11",
     "vue-router": "^3.4.9"

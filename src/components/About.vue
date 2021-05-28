@@ -7,8 +7,8 @@
         <div class="about-container">
             <div class="bio-container"> 
                 <p>Hello, I'm Jeromy Schultz. I'm a Software Engineering student from Milwaukee interested in 
-                    full stack web development. I'm most familiar with Javascript, ReactJS,
-                    and VueJS on the frontend and MySQL and MongoDB on the backend, but I'm always open
+                    full stack web development. I'm most familiar with ReactJS | VueJS 
+                    on the frontend and MySQL | MongoDB on the backend, but I'm always open
                     to learning new technologies.<br><br>Aside from coding, I enjoy hiking, climbing, and
                     visiting Mother Nature's most beautiful places, like this one 
                     <font-awesome-icon class="hand-right" icon="hand-point-right" />
@@ -43,6 +43,7 @@ export default {
     display: flex;
     margin-top: 20px;
 }
+
 
 .jasper-location {
     display: none;

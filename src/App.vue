@@ -29,16 +29,27 @@ export default {
 
 body {
   margin: 0 !important;
+  padding: 0;
+  overflow-x: hidden;
   background-color: #212F3C;
   }
 
 .content-container {
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.line-seperator {
+  transform: translateX(-200%);
 }
 
 .section-header {
   margin-top: 10%;
+  overflow: hidden;
+}
+
+.section-header > h2 {
+    transform: translateY(300%);
 }
 
 .line-seperator {

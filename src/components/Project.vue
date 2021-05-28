@@ -20,16 +20,52 @@
 </template>
 
 <script>
+import { gsap, Power4 } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 export default {
     name: 'Project',
-    props: ['projects']
+    props: ['projects'],
+    mounted(){
+        gsap.registerPlugin(ScrollTrigger);
+
+        const projectDescriptions = gsap.utils.toArray('.project-caption-container');
+        const projectImages = gsap.utils.toArray('.project-image-container');
+
+        projectDescriptions.forEach(description => {
+            gsap.to(description, {
+                x: 0,
+                duration: 1.5,
+                ease: Power4.easeOut,
+                scrollTrigger: {
+                    trigger: description,
+                    start: 'center 80%',
+                    end: 'bottom 80%',
+                    toggleActions: 'play none none reverse',
+                }
+            })
+        });
+        projectImages.forEach(image => {
+            gsap.to(image, {
+                x: 0,
+                duration: 1.5,
+                ease: Power4.easeOut,
+                scrollTrigger: {
+                    trigger: image,
+                    start: 'center 80%',
+                    end: 'bottom 80%',
+                    toggleActions: 'play none none reverse',
+                }
+            })
+        })
+    }
 }
 </script>
 
 <style scoped>
-.left-aligned-image-container, .right-aligned-image-container {
+.project-image-container {
     width: 80%;
-    height: auto;
+    height: 100%;
+    display: inline-block;
 }
 
 .project-caption-container {
@@ -37,8 +73,14 @@ export default {
 }
 
 .right-aligned-image-container {
-     float: right;
+    position: absolute;
+    right: 0;
+    transform: translateX(200%);
 } 
+
+.left-aligned-image-container {
+    transform: translateX(-200%);
+}
 
 .repo-link-container {
     margin-top: 20px;
@@ -57,7 +99,6 @@ export default {
 .project-description, .repo-link-container {
     font-weight: lighter;
     font-size: 1.3vw;
-
 }
 
 .project-caption-container {
@@ -66,23 +107,24 @@ export default {
     border-radius: 10px;
     padding-bottom: 20px;
     top: 50%;
-    transform: translateY(-50%);
     width: 30%;
 }
 
 .right-aligned-caption-container {
+    transform: translate(200%, -50%);
     right: 0;
 } 
 
 .left-aligned-caption-container {
+    transform: translate(-200%, -50%);
     left: 0;
 } 
 
 .project-container {
+    height: 32vw;
     position: relative;
     margin-bottom: 100px;
     margin-top: 20px;
-    overflow: hidden;
 }
 
 .project-image {
@@ -101,7 +143,8 @@ export default {
          -moz-box-sizing: border-box;    /* Firefox, other Gecko */
          box-sizing: border-box;
          padding-top: 40px;
-         transform: translateY(-30px);
+         top: 50%;
+         margin-top: 50px;
      }
 
      .left-aligned-image-container, .right-aligned-image-container {
@@ -112,18 +155,13 @@ export default {
          z-index: 1;
      }
 
-     .right-aligned-image-container{
-         float: none;
-     }
 
      .project-container {
          margin-bottom: 50px;
          position: static;
          height: auto;
      } 
-}
 
-@media screen and (max-width: 1060px) {
     .project-name {
         font-size: 15px;
     }

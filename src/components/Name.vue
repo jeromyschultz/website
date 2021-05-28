@@ -1,20 +1,28 @@
+
 <template>
     <div class="yosemite-container"> 
         <div class="bio-container">
-            <h1 class="name">I'm Jeromy Schultz</h1> 
+            <h1 class="name">Jeromy Schultz</h1> 
             <p class="bio">Software Engineering Major</p>
         </div>
     </div>
 </template>
 
 <script>
+
+import { gsap, Power4 } from 'gsap'
 export default {
-    name: 'Name'
+    name: 'Name',
+    mounted(){
+        const tl = gsap.timeline();
+        tl.to('.yosemite-container', {scale: 1, duration: 3, ease: Power4.easeOut});
+        tl.to('.bio-container', {opacity: 1, duration: 1, ease: Power4.easeOut, delay: -1});
+        tl.to('.header-container', {y: 0, duration: 1, ease: Power4.easeOut, delay: -1})
+    }
 }
 </script>
 
 <style scoped>
-
 
 h1, p { 
     text-align: center;
@@ -26,10 +34,10 @@ h1, p {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-    background-image:url("../Media/yosemite.jpg");
-    width: 100%;
-    height: 600px;
-    
+    background-image:url("../Media/jasper2.jpg");
+    width: 100vw;
+    height: 100vh;
+    transform: scale(1.4);
 }
 
 .name {
@@ -37,6 +45,7 @@ h1, p {
 }
 
 .bio-container {
+    opacity: 0;
     width: 500px;
     position: relative;
     top:calc(40% - 50px);

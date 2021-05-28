@@ -6,7 +6,7 @@
         </div>
         <div class="form-container-wrapper">
             <div class="form-container">
-                <form v-on:reset="formReset" id="form" class="email-form" @submit.prevent="sendEmail">
+                <form id="form" class="email-form" @submit.prevent="sendEmail">
                     <label>Name</label><br/>
                     <input 
                         type="text" 

@@ -51,10 +51,16 @@ export default {
 }
 
 .header-container {
-    width: 100%;
+    transform: translateY(-100%);
+    width: 100vw;
     display: flex;
     justify-content: center;
     text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 5;
+    background: #212F3C;
 }
 
 .reference-container {

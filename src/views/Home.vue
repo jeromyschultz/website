@@ -11,6 +11,9 @@
 
 <script>
 
+import { gsap, Power4 } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
 import Header from '../components/Header.vue'
 import Name from '../components/Name.vue'
 import About from '../components/About.vue'
@@ -28,6 +31,38 @@ export default {
         ProjectSeperator,
         Project,
         EmailForm
+    },
+    mounted(){
+        gsap.registerPlugin(ScrollTrigger)
+        const headers = gsap.utils.toArray('.section-header > h2')
+        headers.forEach(header => {
+            gsap.to(header, {
+                y: 0,
+                duration: 1,
+                ease: Power4.easeOut,
+                scrollTrigger: {
+                    trigger: header,
+                    toggleActions: 'play none none reverse',
+                    start: 'top bottom',
+                    end: 'top bottom'
+                }
+            })
+        })
+        const headerLines = gsap.utils.toArray('.line-seperator')
+        headerLines.forEach(line => {
+            gsap.to(line, {
+                x: 0,
+                duration: 1,
+                ease: Power4.easeOut,
+                scrollTrigger: {
+                    trigger: line,
+                    toggleActions: 'play none none reverse',
+                    start: 'top bottom',
+                    end: 'top bottom'
+                }
+            })
+        })
+
     },
 
     data() {
