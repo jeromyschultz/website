@@ -6,11 +6,14 @@
         </div>
         <div class="about-container">
             <div class="bio-container"> 
-                <p>Hello, I'm Jeromy Schultz. I'm a Software Engineering student from Milwaukee interested in 
-                    full stack web development. I'm most familiar with ReactJS | VueJS 
-                    on the frontend and MySQL | MongoDB on the backend, but I'm always open
-                    to learning new technologies.<br><br>Aside from coding, I enjoy hiking, climbing, and
-                    visiting Mother Nature's most beautiful places, like this one 
+                <p>I'm a Software Engineering student from Milwaukee interested in 
+                    full-stack development. My software knowledge is rooted in object-oriented programming 
+                    languages such as Java and C++. In addition, I have experience working 
+                    on full-stack applications, creating robust backends using Node and MySQL 
+                    and user-friendly frontends using JavaScript and React.
+                    <br/><br/>
+                    When I'm not coding, I enjoy travelling and visiting as many National Parks
+                    as I can. Here is one of the highlights 
                     <font-awesome-icon class="hand-right" icon="hand-point-right" />
                     <font-awesome-icon class="hand-down" icon="hand-point-down"/>  </p>
             </div>   
