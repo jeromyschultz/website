@@ -1,64 +1,67 @@
 <template>
   <div id="app">
-    <Home/>
+    <Home />
   </div>
 </template>
 
 <script>
-import Home from './views/Home'
+import Home from "./views/Home";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Home
-  }
-}
+    Home,
+  },
+};
 </script>
 
 <style>
-
-
-
+:root {
+  --rufus-pink: #a16b6c;
+  --rufus-blue: #7f8cc4;
+}
 #app {
   width: 100vw;
   height: 100vh;
   color: white;
-  font-family: 'Fira Code', monospace;  
 }
-
 
 body {
   margin: 0 !important;
   padding: 0;
   overflow-x: hidden;
-  background-color: #212F3C;
-  }
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  background-color: #212121;
+}
 
 .content-container {
-    margin-left: 10%;
-    margin-right: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .line-seperator {
-  transform: translateX(-200%);
+  transform: scale(1%);
 }
 
 .section-header {
-  margin-top: 10%;
+  text-align: center;
   overflow: hidden;
+  font-size: 1.2rem;
 }
 
 .section-header > h2 {
-    transform: translateY(300%);
+  transform: translateY(300%);
 }
 
 .line-seperator {
-  background-color: #E5E7E9;
+  background-color: #e5e7e9;
   height: 3px;
   max-width: 350px;
   min-width: 200px;
   border-radius: 1px;
-
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media screen and (max-width: 1060px) {
@@ -74,6 +77,4 @@ body {
     margin-right: 5%;
   }
 }
-
-
 </style>

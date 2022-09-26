@@ -1,178 +1,214 @@
 <template>
-    <div class="content-container">
-        <div class="project-container" v-bind:key='project.id' v-for='project in projects'>
-            <div v-bind:class="project.imageContainerClass" class="project-image-container">
-                <img class="project-image" :src='project.img'>
-            </div>
-            <div class="project-caption-container" v-bind:class='project.captionContainerClass'>
-                <div class="project-name">
-                    {{project.name}}
-                </div>
-                <div class="project-description">
-                    {{project.description}}
-                </div>
-                <div class="repo-link-container"> 
-                    Repo link <a class="repo-link" :href="project.repo">here</a>
-                </div>
-            </div>
+  <div class="content-container">
+    <div
+      class="project-container"
+      v-bind:key="project.id"
+      v-for="project in projects"
+    >
+      <div
+        class="project-caption-container"
+        v-bind:class="project.captionContainerClass"
+      >
+        <div class="project-name">
+          {{ project.name }}
         </div>
+        <div class="project-description">
+          {{ project.description }}
+        </div>
+        <div class="visit-links-container">
+          <template v-if="project.repo !== ''">
+            <a class="repo-link" :href="project.repo">Repo</a>
+          </template>
+          <template v-if="project.website !== ''">
+            <a class="site-link" :href="project.website">Visit</a>
+          </template>
+        </div>
+        <!-- <div class="repo-link-container">
+          Repo link <a class="repo-link" :href="project.repo">here</a>
+        </div> -->
+        <div class="technology-wrapper">
+          <div
+            v-bind:key="technology.id"
+            v-for="technology in project.technologies"
+            class="technology-list"
+          >
+            <div class="technology-icon-wrapper">
+              <img
+                class="technology-icon"
+                :src="technology.img"
+                :alt="technology.name"
+              />
+            </div>
+            <div class="technology-name">{{ technology.name }}</div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>
-import { gsap, Power4 } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+//import Header from "./Header.vue";
+import { gsap, Power4 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default {
-    name: 'Project',
-    props: ['projects'],
-    mounted(){
-        gsap.registerPlugin(ScrollTrigger);
+  //components: { Header },
+  name: "Project",
+  props: ["projects"],
+  mounted() {
+    gsap.registerPlugin(ScrollTrigger);
 
-        const projectDescriptions = gsap.utils.toArray('.project-caption-container');
-        const projectImages = gsap.utils.toArray('.project-image-container');
+    const projectDescriptions = gsap.utils.toArray(
+      ".project-caption-container"
+    );
+    //const projectImages = gsap.utils.toArray(".project-image-container");
 
-        projectDescriptions.forEach(description => {
-            gsap.to(description, {
-                x: 0,
-                duration: 1.5,
-                ease: Power4.easeOut,
-                scrollTrigger: {
-                    trigger: description,
-                    start: 'center 80%',
-                    end: 'bottom 80%',
-                    toggleActions: 'play none none reverse',
-                }
-            })
-        });
-        projectImages.forEach(image => {
-            gsap.to(image, {
-                x: 0,
-                duration: 1.5,
-                ease: Power4.easeOut,
-                scrollTrigger: {
-                    trigger: image,
-                    start: 'center 80%',
-                    end: 'bottom 80%',
-                    toggleActions: 'play none none reverse',
-                }
-            })
-        })
-    }
-}
+    projectDescriptions.forEach((description) => {
+      gsap.to(description, {
+        x: 0,
+        duration: 1.5,
+        ease: Power4.easeOut,
+        scrollTrigger: {
+          once: true,
+          trigger: description,
+        },
+      });
+    });
+  },
+};
 </script>
 
 <style scoped>
-.project-image-container {
-    width: 80%;
-    height: 100%;
-    display: inline-block;
-}
-
 .project-caption-container {
-    padding: 10px
+  flex: 1;
+  line-height: 24px;
 }
 
-.right-aligned-image-container {
-    position: absolute;
-    right: 0;
-    transform: translateX(200%);
-} 
+.project-image-container {
+  flex: 1;
+}
 
-.left-aligned-image-container {
-    transform: translateX(-200%);
+.visit-links-container {
+  display: flex;
+  max-width: 500px;
+  margin: 35px 0;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #303030;
+  border-radius: 5px;
+}
+
+.visit-links-container > a {
+  display: block;
+  transition: all 0.5s ease;
+  width: 100%;
+  border-radius: 5px;
+  text-align: center;
+  height: 100%;
+  padding: 10px;
+  color: #eee;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.visit-links-container > a:hover:nth-child(1) {
+  background-color: rgba(161, 107, 108, 0.5);
+}
+
+.visit-links-container > a:hover:nth-child(2) {
+  background-color: rgba(127, 140, 196, 0.5);
 }
 
 .repo-link-container {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .repo-link {
-    color: lightblue;
+  color: lightblue;
+}
+
+.technology-list {
+  display: flex;
+}
+
+.technology-wrapper {
+  display: flex;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.technology-icon-wrapper {
+  width: 25px;
+  height: 25px;
+  position: relative;
+}
+
+.project-icon-wrapper {
+  margin-right: 20px;
+}
+
+.technology-icon {
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.technology-name {
+  margin-left: 10px;
 }
 
 .project-name {
-    font-size: 1.7vw;
-    font-weight: bold;
-    margin-bottom: 20px;
+  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-.project-description, .repo-link-container {
-    font-weight: lighter;
-    font-size: 1.3vw;
+.project-description,
+.repo-link-container {
+  font-size: 1rem;
 }
-
-.project-caption-container {
-    background-color: #17202A;
-    position: absolute;
-    border-radius: 10px;
-    padding-bottom: 20px;
-    top: 50%;
-    width: 30%;
-}
-
-.right-aligned-caption-container {
-    transform: translate(200%, -50%);
-    right: 0;
-} 
-
-.left-aligned-caption-container {
-    transform: translate(-200%, -50%);
-    left: 0;
-} 
 
 .project-container {
-    height: 32vw;
-    position: relative;
-    margin-bottom: 100px;
-    margin-top: 20px;
+  display: flex;
+  padding: 3rem 0;
 }
 
 .project-image {
-    border-radius: 10px;
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 @media screen and (max-width: 1060px) {
+  .left-aligned-caption-container,
+  .right-aligned-caption-container {
+    position: relative;
+    width: 100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box;
+    padding-top: 40px;
+    top: 50%;
+    margin-top: 50px;
+  }
 
-     
-     .left-aligned-caption-container, .right-aligned-caption-container{
-         position: relative;
-         width: 100%;
-         -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-         -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-         box-sizing: border-box;
-         padding-top: 40px;
-         top: 50%;
-         margin-top: 50px;
-     }
+  .left-aligned-image-container,
+  .right-aligned-image-container {
+    width: 100%;
+    position: relative;
+    height: auto;
+    min-width: auto;
+    z-index: 1;
+  }
 
-     .left-aligned-image-container, .right-aligned-image-container {
-         width: 100%;
-         position: relative;
-         height: auto;
-         min-width: auto;
-         z-index: 1;
-     }
-
-
-     .project-container {
-         margin-bottom: 50px;
-         position: static;
-         height: auto;
-     } 
-
-    .project-name {
-        font-size: 15px;
-    }
-
-    .project-description {
-        font-size: 10px;
-    }
-
-    .repo-link-container {
-        font-size: 10px;
-    }
+  .project-container {
+    flex-direction: column;
+    padding: 0 0 3rem 0;
+  }
 }
-
 </style>
