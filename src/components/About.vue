@@ -46,6 +46,7 @@ export default {
 .bio-container {
   width: 90%;
   margin-right: 20px;
+  color: #e0e0e0;
 }
 
 @media screen and (max-width: 1060px) {

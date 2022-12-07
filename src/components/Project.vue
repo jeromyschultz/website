@@ -169,6 +169,10 @@ export default {
   margin-bottom: 20px;
 }
 
+.project-description {
+  color: #e0e0e0;
+}
+
 .project-description,
 .repo-link-container {
   font-size: 1rem;

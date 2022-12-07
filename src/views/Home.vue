@@ -79,7 +79,7 @@ export default {
           name: "Spotify Clone",
           icon: require("../Media/Icons/Project/spotify.svg"),
           description:
-            "My latest side project is a clone of Spotify using some technologies that I've never had experience with in neither school nor industry. As an avid listener of Spotify (45k minutes listened to in 2021), I thought trying to make a clone of it could be fun and also beneficial. Plus Spotify's API has a ton of information that they don't show you in the actual application- like who your recent most listened to songs and artists are. The full technology stack for this project includes React and MaterialUI for the frontend, Redux for managing global state, GraphQL to contact the Spotify API, and deployed using Heroku.",
+            "My latest side project is a clone of Spotify using technologies that I've never had experience with in school or industry. I wanted to clone Spotify because I use it everyday, and the web API is incredibly robust. Any informaiton on the native app can be found using the API plus additional metadata - like who your recent most listened to songs and artists are. The full technology stack for this project includes React and MaterialUI for the frontend, Redux for managing global state, GraphQL to contact the Spotify API, and deployed using Heroku.",
           img: require("../Media/spotifyclone.jpeg"),
           imageContainerClass: "left-aligned-image-container",
           captionContainerClass: "right-aligned-caption-container",
@@ -107,7 +107,6 @@ export default {
           ],
           repo: "https://github.com/jeromys23/spotify-clone",
           website: "https://jfs-spotify-clone.herokuapp.com/",
-          displayWebsite: true,
         },
         {
           name: "AI 4 12K",
@@ -136,13 +135,13 @@ export default {
             },
           ],
           repo: "",
-          website: "https://testappai12k.azurewebsites.net/",
+          website: "",
         },
         {
           name: "Giftly",
           icon: require("../Media/Icons/Project/giftly.svg"),
           description:
-            "MSOE has a course called 'Software Development Lab', which is basically just Senior Design, but for juniors. Our team of 4 worked with a product owner to create a gift sharing wesbite designed to make exchanging gifts easier. The high-level requirements were simple: allow users to post gifts, have others contribute to them, then allow the creators to purchase them. With those requirements we made Giftly, a React application that we coined as a social media for gift sharing. Users were able to create profiles, add friends, and post gifts to their page using an Amazon URL. For frontend styling we used Bootstrap, MySQL to handle data fetching and storage, and deployed it using NGINX.",
+            "MSOE has a course called 'Software Development Lab', which is a Senior Design-esque course, but for juniors. Our team of 4 worked with a product owner to create a gift sharing application designed to make exchanging gifts easier. The high-level requirements were simple: allow users to post gifts, have others contribute to them, then allow the creators to purchase them. With those requirements we made Giftly, a React application that we coined as a social media for gift sharing. Users can create profiles, add friends, and post gifts to their page using an Amazon URL. For frontend styling we used Bootstrap, MySQL to handle data fetching and storage, and deployed using NGINX.",
           img: require("../Media/swisstek.jpeg"),
           imageContainerClass: "left-aligned-image-container",
           captionContainerClass: "right-aligned-caption-container",
@@ -172,7 +171,7 @@ export default {
           name: "Swiss Tek Website",
           icon: require("../Media/Icons/Project/swisstek.svg"),
           description:
-            "Back in 2017 when I decided that I was interested in web development, the Swiss Tek website was the first full project I had built. Swiss Tek is a company based out of Pewaukee, Wisconsin that does metal coating. I built a website for them using React, as their existing website needed some modernization.",
+            "Back in 2017 when I decided that I was interested in web development, the Swiss Tek website was the first full project I had built. Swiss Tek is a company based out of Pewaukee, Wisconsin specializing in metal coating. I built a website for them using React, as their existing website needed some modernization.",
           img: require("../Media/swisstek.jpeg"),
           imageContainerClass: "left-aligned-image-container",
           captionContainerClass: "right-aligned-caption-container",
